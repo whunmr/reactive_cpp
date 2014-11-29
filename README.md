@@ -3,7 +3,6 @@ reactive_cpp
 
 this repo shows how to implement an DSL to describe reactive application.
 
-```
 def_mi(Basic_mi_x) {
                                  _step(sync_call_1);
                                  _step(sync_call_2);
@@ -23,4 +22,4 @@ def_mi(Basic_mi_x) {
         	} on_msg_ack_ex_end;
         }async_step_end;
 } def_mi_end;
-```
+
