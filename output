@@ -1,0 +1,161 @@
+[==========] Running 12 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 12 tests from basic_mi_test
+[ RUN      ] basic_mi_test.mi_should_call_trigger_method_of_async_step
+register action for msg: 5
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+[       OK ] basic_mi_test.mi_should_call_trigger_method_of_async_step (3 ms)
+[ RUN      ] basic_mi_test.exit_msg_interaction__WHEN_one_step_failed
+register action for msg: 5
+[       OK ] basic_mi_test.exit_msg_interaction__WHEN_one_step_failed (0 ms)
+[ RUN      ] basic_mi_test.should_call__ack_msg_handling_step__WHEN__got_ack_msg_1
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.should_call__ack_msg_handling_step__WHEN__got_ack_msg_1 (1 ms)
+[ RUN      ] basic_mi_test.should_call__ack_msg_handling_step__WHEN__got_ack_msg_2
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.should_call__ack_msg_handling_step__WHEN__got_ack_msg_2 (1 ms)
+[ RUN      ] basic_mi_test.should_call__ack_msg_handling_step__WHEN__got_ack_msg_3
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.should_call__ack_msg_handling_step__WHEN__got_ack_msg_3 (0 ms)
+[ RUN      ] basic_mi_test.should_keep_in_Dispatcher__if_steps_returns_S_CONTINUE
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+[       OK ] basic_mi_test.should_keep_in_Dispatcher__if_steps_returns_S_CONTINUE (0 ms)
+[ RUN      ] basic_mi_test.support_write_complex_expression_in_ack_msg_handler_like_for_msg_ack_4
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+bar_function_1
+sync_call_nested_5
+sync_call_nested_6
+nested_async_call_1
+register action for msg: 101
+register action for msg: 102
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.support_write_complex_expression_in_ack_msg_handler_like_for_msg_ack_4 (0 ms)
+[ RUN      ] basic_mi_test.should_able_to_call_nested_message_interaction
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+foo_function_1
+bar_function_1
+nested_async_call_1
+register action for msg: 101
+register action for msg: 102
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.should_able_to_call_nested_message_interaction (1 ms)
+[ RUN      ] basic_mi_test.should_able_to_call_nested_message__and_nested_ack_msg_handler
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 3
+register action for msg: 4
+foo_function_1
+bar_function_1
+register action for msg: 101
+register action for msg: 102
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.should_able_to_call_nested_message__and_nested_ack_msg_handler (0 ms)
+[ RUN      ] basic_mi_test.should_correct_call_handler_for_same_msg__msg_ack_1
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 4
+foo_function_1
+bar_function_1
+nested_async_call_1
+register action for msg: 101
+register action for msg: 102
+register action for msg: 1
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.should_correct_call_handler_for_same_msg__msg_ack_1 (0 ms)
+[ RUN      ] basic_mi_test.should_correct_call_handler_for_nested_ack_ex
+register action for msg: 5
+sync_call_1
+sync_call_2
+async_call_1
+register action for msg: 1
+register action for msg: 2
+register action for msg: 4
+foo_function_1
+bar_function_1
+nested_async_call_1
+register action for msg: 101
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+nested_async_call_1
+register action for msg: 102
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.should_correct_call_handler_for_nested_ack_ex (0 ms)
+[ RUN      ] basic_mi_test.support_guard_task
+register action for msg: 5
+sync_call_1
+sync_call_2
+send_msg_to_mgr
+register action for msg: 7
+activate_guard by add to dispatcher, duration: 2
+register action for msg: 8
+continue_more_works
+===================>: retire_on_msg_succeeded_msg
+guard::--------------> retire: 7  ,0x651cb0
+on_msg_ack_2
+---xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx----->async_step_trigger_func
+[       OK ] basic_mi_test.support_guard_task (1 ms)
+[----------] 12 tests from basic_mi_test (8 ms total)
+
+[----------] Global test environment tear-down
+[==========] 12 tests from 1 test case ran. (9 ms total)
+[  PASSED  ] 12 tests.
+
+  YOU HAVE 4 DISABLED TESTS
